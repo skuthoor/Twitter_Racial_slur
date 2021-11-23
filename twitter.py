@@ -1,3 +1,4 @@
+import re
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import *
 stemmer = PorterStemmer()
