@@ -12,13 +12,14 @@ def remove_pattern(input_txt, pattern):
 
 t_file = open('twitter.txt')                        # Opening Twitter tweet file
 
-racial_slur = {"nerfherder"}                            # set of words that indicate racial slurs
+racial_slur = {"paki","whitey"}                            # set of words that indicate racial slurs
 
 #racial_slur = list(stemmer.stem(i) for i in racial_slur)    #stemmming racial slur words
 
 lines = t_file.readlines()
 c =0
-for line in lines:    
+for line in lines:   
+    line = line.lower() 
     line = remove_pattern(line,"@[\w]*")            #removing Twitter handles
 
     line = re.sub(r"[^a-zA-Z0-9]"," ",line)         # Remove special characters, numbers, punctuation
